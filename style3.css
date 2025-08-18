@@ -18,12 +18,14 @@ body {
     overflow-x: hidden;
     cursor: none;
 }
+
 body strong {
     color: #f39200;
 }
 body em {
     color: #e94e1b;
 }
+
 .point {
     position: fixed;
     left: 0;
@@ -34,11 +36,13 @@ body em {
     will-change: transform, background-color;
     transition: background-color 0.3s;
 }
+
 img {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
 }
+
 .back-arrow {
     position: fixed;
     top: 10px;
@@ -60,6 +64,7 @@ img {
     z-index: 999;
     cursor: none;
 }
+
 .back-arrow::before {
     content: "";
     position: absolute;
@@ -71,15 +76,18 @@ img {
     transition: opacity 0.3s ease, transform 0.3s ease;
     border-radius: 20px;
 }
+
 .back-arrow:hover::before {
     opacity: 1;
     transform: scale(1.2);
 }
+
 .back-arrow:hover {
     background-color: white;
     color: #1d1d1b;
     transform: scale(1.05);
 }
+
 .h1 {
     font-size: clamp(2rem, 6vw, 4rem);
     margin: 2rem 0 0 0;
@@ -88,10 +96,9 @@ img {
     border-color: #F5C133;
     font-weight: 600;
     color: #f39200;
-    text-shadow:
-        0 -1px 0 #F5C133,
-        0 1px 1px rgba(0,0,0,0.3);
+    text-shadow: 0 -1px 0 #F5C133, 0 1px 1px rgba(0,0,0,0.3);
 }
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -101,10 +108,10 @@ img {
     width: 100%;
     max-width: 1200px;
 }
+
 .box {
-    flex: 1 1 200px;
-    max-width: 300px;
-    aspect-ratio: 5 / 2;
+    flex: 0 0 250px;
+    height: 100px;
     background-color: #1d1d1b;
     color: white;
     font-size: clamp(1rem, 2vw, 1.5rem);
@@ -120,11 +127,13 @@ img {
     transition: all 0.3s ease;
     cursor: none;
 }
+
 .box:hover {
     background-color: white;
     color: #1d1d1b;
     transform: scale(1.05);
 }
+
 .box::before {
     content: "";
     position: absolute;
@@ -135,14 +144,24 @@ img {
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .box:hover::before {
     opacity: 1;
     transform: scale(1.2);
 }
+
 .box-link {
     text-decoration: none;
     color: inherit;
 }
+
+@media screen and (max-width: 1024px) {
+    .box {
+        flex: 0 0 200px;
+        height: 80px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     body {
         gap: 1rem;
@@ -154,8 +173,8 @@ img {
         padding: 1rem;
     }
     .box {
-        width: 100%;
-        max-width: 100%;
+        flex: 0 0 150px;
+        height: 60px;
     }
     .h1 {
         font-size: clamp(1.8rem, 8vw, 3rem);
