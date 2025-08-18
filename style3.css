@@ -87,8 +87,6 @@ img {
     transform: scale(1.05);
 }
 
-
-/* TITRE */
 .h1 {
     font-size: clamp(2rem, 6vw, 4rem);
     margin: 2rem 0 0 0;
@@ -99,8 +97,8 @@ img {
     color: #f39200;
     /*text-shadow: 1px 1px 4px rgba(0,0,0,0.5);*/
     text-shadow:
-        0 -1px 0 #F5C133,  /* reflet haut */
-        0 1px 1px rgba(0,0,0,0.3); /* léger relief */
+        0 -1px 0 #F5C133,
+        0 1px 1px rgba(0,0,0,0.3);
 }
 
 .container {
@@ -111,7 +109,6 @@ img {
     padding: 2rem;
 }
 
-/* Assure que les box peuvent tenir à plusieurs */
 .box {
     width: 250px;
     height: 100px;
@@ -158,4 +155,5 @@ img {
 .box-link {
     text-decoration: none;
     color: inherit;
+
 }
