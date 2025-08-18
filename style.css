@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* mieux que height:100vh pour éviter les bugs mobiles */
+    min-height: 100vh;
     background-image: url('Sans titre - 2.jpg');
     background-size: cover;
     background-position: center;
@@ -19,7 +19,6 @@ body {
     cursor: none;
 }
 
-/* Effet curseur */
 .point {
     position: fixed;
     left: 0;
@@ -31,7 +30,6 @@ body {
     transition: background-color 0.3s;
 }
 
-/* Bouton retour */
 .back-arrow {
     position: fixed;
     top: 10px;
@@ -84,7 +82,6 @@ body {
     transform: scale(1.05);
 }
 
-/* TITRE */
 .title h1 {
     font-size: clamp(2rem, 6vw, 4rem);
     margin: 2rem 0 0 0;
@@ -97,7 +94,6 @@ body {
         0 1px 1px rgba(0,0,0,0.3);
 }
 
-/* Grille des boîtes */
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -107,10 +103,10 @@ body {
 }
 
 .box {
-    flex: 1 1 250px; /* adaptatif */
+    flex: 1 1 250px;
     max-width: 300px;
     min-width: 200px;
-    aspect-ratio: 5 / 4; /* garde une proportion fixe */
+    aspect-ratio: 5 / 4;
     background-color: #1d1d1b;
     color: white;
     font-size: clamp(1rem, 2vw, 1.5rem);
@@ -154,7 +150,6 @@ body {
     color: inherit;
 }
 
-/* 📱 RESPONSIVE : mobiles */
 @media screen and (max-width: 768px) {
     body {
         gap: 1rem;
@@ -176,3 +171,4 @@ body {
         font-size: clamp(1.8rem, 8vw, 3rem);
     }
 }
+
