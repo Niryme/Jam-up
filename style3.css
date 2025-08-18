@@ -37,7 +37,7 @@ body em {
     transition: background-color 0.3s;
 }
 
-img {
+body img {
     max-width: 50%;
     height: auto;
     margin-bottom: 20px;
@@ -185,4 +185,5 @@ img {
     margin-bottom: 20px;
 }
 }
+
 
