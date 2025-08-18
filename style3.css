@@ -38,7 +38,7 @@ body em {
 }
 
 img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     margin-bottom: 20px;
 }
@@ -179,4 +179,10 @@ img {
     .h1 {
         font-size: clamp(1.8rem, 8vw, 3rem);
     }
+    img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
 }
+}
+
