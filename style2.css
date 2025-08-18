@@ -25,7 +25,6 @@ body strong{
 body em{
     color: #e94e1b;
 }
-/* Curseur personnalisé */
 .point {
     position: fixed;
     left: 0;
@@ -37,18 +36,17 @@ body em{
     transition: background-color 0.3s;
 }
 
-/* Flèche retour */
 .back-arrow {
-    position: fixed;  /* toujours fixe par rapport à la fenêtre */
-    top: 20px;        /* distance depuis le haut */
-    left: 20px;       /* distance depuis la gauche */
+    position: fixed;
+    top: 20px;
+    left: 20px;
     width: 120px;
     height: 60px;
     border-radius: 20px;
     background-color: #1d1d1b;
     border: 2px solid transparent;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    display: flex;    /* juste pour centrer l'image à l'intérieur */
+    display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -91,9 +89,6 @@ body em{
     transform: scale(1.05);
 }
 
-
-
-/* TITRE */
 .title h1 {
     font-size: clamp(2rem, 6vw, 4rem);
     margin: 2rem 0 0 0;
@@ -103,11 +98,10 @@ body em{
     color: #f39200;
     /*text-shadow: 1px 1px 4px rgba(0,0,0,0.5);*/
     text-shadow:
-        0 -1px 0 #F5C133,  /* reflet haut */
-        0 1px 1px rgba(0,0,0,0.3); /* léger relief */
+        0 -1px 0 #F5C133,
+        0 1px 1px rgba(0,0,0,0.3);
 }
 
-/* CONTAINER VIDÉOS OU BLOCS */
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -127,7 +121,6 @@ body em{
     margin: 1rem auto 0;
 }
 
-/* ZONE SOURCES */
 .sources {
     max-width: 800px;
     margin: 0 auto 2rem auto;
@@ -162,3 +155,4 @@ body em{
     color: #f39200;
     text-decoration: underline;
 }
+
