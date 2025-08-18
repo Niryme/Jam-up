@@ -38,7 +38,7 @@ body em {
 }
 
 body img {
-    max-width: 50%;
+    max-width: 30%;
     height: auto;
     margin-bottom: 20px;
 }
@@ -185,5 +185,6 @@ body img {
     margin-bottom: 20px;
 }
 }
+
 
 
