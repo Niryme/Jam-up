@@ -5,10 +5,61 @@
     <title>Jam'up</title>
     <link rel="stylesheet" href="style2.css">
     <link rel="icon" href="favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const startScreen = document.getElementById("start-screen");
+    const introAnimation = document.getElementById("intro-animation");
+    const step1 = document.getElementById("step1");
+    const drumroll = document.getElementById("drumroll");
+
+    const allowed = sessionStorage.getItem("allowFunkIntro") === "true";
+    sessionStorage.removeItem("allowFunkIntro");
+
+    const content = document.querySelectorAll(
+        "body > *:not(#start-screen):not(#intro-animation)"
+    );
+
+    // Cas 1 : accès normal → PAS d’animation
+    if (!allowed) {
+        startScreen.style.display = "none";
+        introAnimation.style.display = "none";
+
+        content.forEach(el => el.style.display = "");
+        return;
+    }
+
+    // Cas 2 : accès via bonne page → animation
+    content.forEach(el => el.style.display = "none");
+
+    window.addEventListener("click", launchAnimation, { once: true });
+
+    function launchAnimation() {
+        startScreen.style.display = "none";
+        introAnimation.style.display = "flex";
+
+        step1.textContent = "Votre style de jazz est";
+
+        drumroll.currentTime = 0;
+        drumroll.play().catch(() => {});
+
+        setTimeout(() => {
+            introAnimation.style.display = "none";
+
+            content.forEach(el => el.style.display = "");
+
+        }, 4000);
+    }
+});
+</script>
+
 <body>
-<a href="page1.html" class="back-arrow">
+    <div id="start-screen">Cliquez pour découvrir votre style</div>
+    <div id="intro-animation">
+        <div class="intro-text" id="step1">Votre style de jazz est</div>
+        <audio id="drumroll" src="drumroll.mp3" preload="auto"></audio>
+    </div>
+<a href="index.html" class="back-arrow">
         <img src="Jam'up.png" alt="Accueil" class="back-arrow-img">
     </a>
     <div class="title">
@@ -52,8 +103,44 @@
             </div>
         </div>
     </div>
-
-    <section class="sources">
+    <div class="container">
+        <section class="sim">
+            <h2>Styles similaires</h2>
+            <ul>
+                <li><a href="soul.html">Soul</a></li>
+                <li><a href="swing.html">Swing</a></li>
+                <li><a href="new_orleans.html">New Orleans</a></li>
+            </ul>
+        </section>
+        <section class="other">
+            <h2>Tous les styles</h2>
+            <ul>
+                <li><a href="soul.html">Soul</a></li>
+                <li><a href="swing.html">Swing</a></li>
+                <li><a href="new_orleans.html">New Orleans</a></li>
+                <li><a href="rapide.html">Bebop</a></li>
+                <li><a href="rock.html">Jazz Fusion</a></li>
+            </ul>
+            <ul>
+                <li><a href="amerique_latine.html">Latin Jazz</a></li>
+                <li><a href="afrique.html">Ethno-Jazz</a></li>
+                <li><a href="urbaine.html">Jazz Rap</a></li>
+                <li><a href="fraiche.html">Cool Jazz</a></li>
+                <li><a href="cosy.html">West Coast Jazz</a></li>
+            </ul>
+            <ul>
+                <li><a href="sombre.html">Free Jazz</a></li>
+                <li><a href="blues.html">Blues Jazz</a></li>
+                <li><a href="classique.html">Chicago Jazz</a></li>
+                <li><a href="bohème.html">Jazz Manouche</a></li>
+            </ul>
+            <ul>
+                <li><a href="fusion.html">Avant-garde Jazz</a></li>
+                <li><a href="musique_classique.html">Third Stream</a></li>
+                <li><a href="nu_jazz.html">Nu Jazz</a></li>
+                <li><a href="electro.html">Electro-Jazz</a></li>
+            </ul>
+        <section class="sources">
         <h2>Pour aller plus loin</h2>
         <h3>Chicago Jazz</h3>
         <ul>
@@ -68,7 +155,10 @@
         </ul>
     </section>
 
+    </div>
+    
+    
+
     <script src="cursor-trail.js"></script>
 </body>
 </html>
-
