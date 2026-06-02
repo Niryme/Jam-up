@@ -5,23 +5,22 @@
     <title>Jam'up</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
     <div class="title">
-<a href="page1.html" class="back-arrow">
+<a href="index.html" class="back-arrow">
         <img src="Jam'up.png" alt="Accueil" class="back-arrow-img">
     </a>        <h1>Quel genre de groove ?</h1>
     </div>
     <div class="container">
-        <a href="swing.html" class="box-link">
+        <a href="swing.html" class="box-link" onclick="sessionStorage.setItem('allowFunkIntro','true')">
             <div class="box">Swing</div>
         </a>
-        <a href="new_orleans.html" class="box-link">
+        <a href="new_orleans.html" class="box-link" onclick="sessionStorage.setItem('allowFunkIntro','true')">
             <div class="box">New Orleans Jazz</div>
         </a>
     </div>
     <script src="cursor-trail.js"></script>
 </body>
 </html>
-
