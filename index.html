@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jam'up</title>
-        <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body>
+  <button class="about" id="openBtn">À propos de Jam'Up</button>
+  <div id="overlay" class="hidden"></div>
+  <div id="encadre" class="hidden">
+    <p>Jam’Up est né d’un constat simple : le jazz intrigue, mais il peut aussi rapidement décourager. Je me suis rendu compte qu’en arrivant sur une plateforme musicale, il est souvent difficile de savoir par où commencer. Entre les nombreux styles, les références inconnues et l’absence de repères clairs, on se retrouve vite à écouter un morceau au hasard, sans vraiment comprendre ce qui nous plaît.</p>
+    <p>L’idée du projet est donc de proposer une porte d’entrée différente. Plutôt que de demander à l’utilisateur de chercher un artiste ou un morceau, Jam’Up lui propose un parcours guidé, basé sur son humeur et ses ressentis. À travers une série de choix simples, il est orienté vers un style de jazz qui lui correspond, accompagné de morceaux pour en faire l’expérience directement.</p>
+    <p>Ce projet repose sur une approche volontairement accessible : une navigation simple, sans complexité technique, où chaque étape amène naturellement à la suivante. L’objectif n’est pas d’expliquer le jazz de manière théorique, mais de le faire ressentir, de manière plus intuitive.</p>
+    <p>À travers Jam’Up, je cherche à rendre le jazz plus proche, plus intuitif, presque personnel. L’idée est que chacun puisse y trouver un point d’accroche, sans prérequis, et repartir avec une première expérience du jazz qui fait sens pour lui.</p>
+    <button class="closeBtn" id="closeBtn">Fermer</button>
+  </div>
     <div class="scroll-indicator">↓</div>
     <img src="Jam'up.png" alt="Jam'up">
     <h1>
@@ -45,5 +55,24 @@ const observer = new IntersectionObserver(
 );
 
 observer.observe(target);
+const openBtn = document.getElementById("openBtn");
+const closeBtn = document.getElementById("closeBtn");
+const encadre = document.getElementById("encadre");
+const overlay = document.getElementById("overlay");
+
+openBtn.addEventListener("click", () => {
+    encadre.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+});
+
+closeBtn.addEventListener("click", () => {
+    encadre.classList.add("hidden");
+    overlay.classList.add("hidden");
+});
+
+overlay.addEventListener("click", () => {
+    encadre.classList.add("hidden");
+    overlay.classList.add("hidden");
+});
 </script>
 </html>
